@@ -5,6 +5,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -43,6 +44,18 @@ fun ProfilePage(){
            ProfileStats(amnt = "48", stat = "Posts")
             ProfileStats(amnt = "617", stat = "Followers")
             ProfileStats(amnt = "342", stat = "Following")
+        }
+        Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ){
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Follow")
+            }
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = "Message")
+            }
         }
     }
 }
