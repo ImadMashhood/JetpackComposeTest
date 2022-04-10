@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,42 +20,44 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ProfilePage(){
-    Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()
+    Card() {
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
         ) {
-        Image(painter = painterResource(id = R.drawable.imad),
-            contentDescription = "Imad Profile Picture",
-            modifier = Modifier
-                .size(125.dp)
-                .clip(CircleShape)
-                .border(
-                    width = 2.dp,
-                    color = Color.Red,
-                    shape = CircleShape
-                ),
-            contentScale = ContentScale.Crop
-        )
-        Text(text="Imad Mashhood")
-        Text(text = "Katy, TX")
-        Row(horizontalArrangement = Arrangement.SpaceEvenly,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        ) {
-           ProfileStats(amnt = "48", stat = "Posts")
-            ProfileStats(amnt = "617", stat = "Followers")
-            ProfileStats(amnt = "342", stat = "Following")
-        }
-        Row(horizontalArrangement = Arrangement.SpaceEvenly,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        ){
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Follow")
+            Image(painter = painterResource(id = R.drawable.imad),
+                contentDescription = "Imad Profile Picture",
+                modifier = Modifier
+                    .size(125.dp)
+                    .clip(CircleShape)
+                    .border(
+                        width = 2.dp,
+                        color = Color.Red,
+                        shape = CircleShape
+                    ),
+                contentScale = ContentScale.Crop
+            )
+            Text(text="Imad Mashhood")
+            Text(text = "Katy, TX")
+            Row(horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                ProfileStats(amnt = "48", stat = "Posts")
+                ProfileStats(amnt = "617", stat = "Followers")
+                ProfileStats(amnt = "342", stat = "Following")
             }
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Message")
+            Row(horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ){
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Follow")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Message")
+                }
             }
         }
     }
