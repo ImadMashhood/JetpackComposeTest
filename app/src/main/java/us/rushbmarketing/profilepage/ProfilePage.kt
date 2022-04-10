@@ -3,8 +3,11 @@ package us.rushbmarketing.profilepage
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -20,9 +23,15 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ProfilePage(){
-    Card() {
-        Column(horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
+    Card(elevation = 6.dp,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 100.dp, bottom = 10.dp, start = 16.dp, end = 16.dp)
+            .border(width = 2.dp, color = Color.Black, shape = RoundedCornerShape(30.dp))
+    ) {
+        Column(Modifier.verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             Image(painter = painterResource(id = R.drawable.imad),
                 contentDescription = "Imad Profile Picture",
